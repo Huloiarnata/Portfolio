@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin · Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+</head>
+<body class="admin-body">
+
+  <aside class="admin-sidebar">
+    <div class="admin-brand">
+      <div class="admin-logo">RK<span class="accent-dot">.</span></div>
+      <span class="admin-badge">Editor</span>
+    </div>
+    <nav class="admin-nav">
+      <button class="anav-item active" data-tab="profile">Profile & Photo</button>
+      <button class="anav-item" data-tab="education">Education</button>
+      <button class="anav-item" data-tab="skills">Skills</button>
+      <button class="anav-item" data-tab="experience">Experience</button>
+      <button class="anav-item" data-tab="projects">Projects</button>
+      <button class="anav-item" data-tab="research">Research</button>
+    </nav>
+    <div class="admin-sidebar-footer">
+      <a href="/" target="_blank" class="admin-view-site">View Site ↗</a>
+      <a href="/admin-panel/logout/" class="admin-logout">Log out</a>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <h1 class="admin-page-title" id="page-title">Profile &amp; Photo</h1>
+      <button class="save-btn" id="save-btn" onclick="saveActive()">Save Changes</button>
+    </div>
+
+    <div class="admin-content">
+
+      <!-- PROFILE TAB -->
+      <div class="tab-panel active" id="tab-profile">
+        {% if profile %}
+
+        <!-- Photo upload -->
+        <div class="photo-section">
+          <div class="photo-preview-wrap">
+            {% if profile.photo %}
+              <img src="{{ profile.photo.url }}" id="photo-preview" class="photo-preview" alt="Profile photo"/>
+            {% else %}
+              <div class="photo-placeholder" id="photo-preview-placeholder">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                <span>No photo</span>
+              </div>
+              <img src="" id="photo-preview" class="photo-preview" style="display:none" alt="Preview"/>
+            {% endif %}
+          </div>
+          <div class="photo-upload-area" id="photo-drop" onclick="document.getElementById('photo-file').click()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <span>Click or drag to upload photo</span>
+            <span class="photo-hint">JPG, PNG, WebP · Max 5MB</span>
+            <input type="file" id="photo-file" accept="image/*" style="display:none" onchange="handlePhotoChange(this)"/>
+          </div>
+        </div>
+
+        <div class="section-divider">Identity</div>
+        <div class="field-grid">
+          <div class="field-group">
+            <label>Full Name</label>
+            <input type="text" id="p-name" value="{{ profile.name }}"/>
+          </div>
+          <div class="field-group">
+            <label>Title / Role</label>
+            <input type="text" id="p-title" value="{{ profile.title }}"/>
+          </div>
+          <div class="field-group field-group--full">
+            <label>Tagline / Bio</label>
+            <textarea id="p-tagline" rows="3">{{ profile.tagline }}</textarea>
+          </div>
+        </div>
+
+        <div class="section-divider">Social Links</div>
+        <div class="field-grid">
+          <div class="field-group">
+            <label>LinkedIn (URL or path)</label>
+            <input type="text" id="p-linkedin" value="{{ profile.linkedin }}" placeholder="linkedin.com/in/yourname"/>
+          </div>
+          <div class="field-group">
+            <label>GitHub URL</label>
+            <input type="text" id="p-github" value="{{ profile.github }}" placeholder="https://github.com/yourname"/>
+          </div>
+          <div class="field-group">
+            <label>Google Scholar URL</label>
+            <input type="text" id="p-scholar" value="{{ profile.google_scholar }}" placeholder="https://scholar.google.com/..."/>
+          </div>
+          <div class="field-group">
+            <label>Twitter / X URL</label>
+            <input type="text" id="p-twitter" value="{{ profile.twitter }}" placeholder="https://twitter.com/yourname"/>
+          </div>
+          <div class="field-group">
+            <label>Personal Website</label>
+            <input type="text" id="p-website" value="{{ profile.website }}" placeholder="https://yoursite.com"/>
+          </div>
+          <div class="field-group">
+            <label>Resume / CV Link</label>
+            <input type="text" id="p-resume" value="{{ profile.resume_link }}" placeholder="https://drive.google.com/..."/>
+          </div>
+        </div>
+
+        <div class="section-divider">
+          Highlight Stats
+          <span class="divider-hint">Leave blank to hide</span>
+        </div>
+        <div class="field-grid">
+          <div class="field-group">
+            <label>Stat 1 Value</label>
+            <input type="text" id="p-s1v" value="{{ profile.stat1_value }}" placeholder="e.g. $500M"/>
+          </div>
+          <div class="field-group">
+            <label>Stat 1 Label</label>
+            <input type="text" id="p-s1l" value="{{ profile.stat1_label }}" placeholder="e.g. Revenue Preserved"/>
+          </div>
+          <div class="field-group">
+            <label>Stat 2 Value</label>
+            <input type="text" id="p-s2v" value="{{ profile.stat2_value }}" placeholder="e.g. 240%"/>
+          </div>
+          <div class="field-group">
+            <label>Stat 2 Label</label>
+            <input type="text" id="p-s2l" value="{{ profile.stat2_label }}" placeholder="e.g. Cache Hit Improvement"/>
+          </div>
+          <div class="field-group">
+            <label>Stat 3 Value</label>
+            <input type="text" id="p-s3v" value="{{ profile.stat3_value }}" placeholder="e.g. 50K+"/>
+          </div>
+          <div class="field-group">
+            <label>Stat 3 Label</label>
+            <input type="text" id="p-s3l" value="{{ profile.stat3_label }}" placeholder="e.g. IoT Data Entries"/>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- EDUCATION TAB -->
+      <div class="tab-panel" id="tab-education">
+        <div id="edu-list">
+          {% for edu in education %}
+          <div class="item-block">
+            <div class="item-block-header">
+              <span class="item-block-title">{{ edu.institution }}</span>
+              <button class="remove-btn" onclick="removeBlock(this)">Remove</button>
+            </div>
+            <div class="field-grid">
+              <div class="field-group field-group--full">
+                <label>Institution</label>
+                <input type="text" class="edu-institution" value="{{ edu.institution }}"/>
+              </div>
+              <div class="field-group field-group--full">
+                <label>Degree</label>
+                <input type="text" class="edu-degree" value="{{ edu.degree }}"/>
+              </div>
+              <div class="field-group">
+                <label>Location</label>
+                <input type="text" class="edu-location" value="{{ edu.location }}"/>
+              </div>
+              <div class="field-group">
+                <label>Grade / GPA</label>
+                <input type="text" class="edu-grade" value="{{ edu.grade }}"/>
+              </div>
+              <div class="field-group">
+                <label>Year Range</label>
+                <input type="text" class="edu-year" value="{{ edu.year }}" placeholder="e.g. 2022 – 2026"/>
+              </div>
+              <div class="field-group">
+                <label>Link (optional)</label>
+                <input type="text" class="edu-link" value="{{ edu.link }}"/>
+              </div>
+              <div class="field-group field-group--full">
+                <label>Description (optional)</label>
+                <textarea class="edu-desc" rows="2">{{ edu.description }}</textarea>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <button class="add-btn" onclick="addEducation()">+ Add Education</button>
+      </div>
+
+      <!-- SKILLS TAB -->
+      <div class="tab-panel" id="tab-skills">
+        <div id="skills-list">
+          {% for cat in skill_categories %}
+          <div class="item-block">
+            <div class="item-block-header">
+              <span class="item-block-title">{{ cat.name }}</span>
+              <button class="remove-btn" onclick="removeBlock(this)">Remove</button>
+            </div>
+            <div class="field-grid">
+              <div class="field-group field-group--full">
+                <label>Category Name</label>
+                <input type="text" class="skill-cat-name" value="{{ cat.name }}"/>
+              </div>
+              <div class="field-group field-group--full">
+                <label>Skills (comma separated)</label>
+                <input type="text" class="skill-cat-items" value="{% for s in cat.skills.all %}{{ s.name }}{% if not forloop.last %}, {% endif %}{% endfor %}"/>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <button class="add-btn" onclick="addSkillCategory()">+ Add Category</button>
+      </div>
+
+      <!-- EXPERIENCE TAB -->
+      <div class="tab-panel" id="tab-experience">
+        <div id="exp-list">
+          {% for exp in experiences %}
+          <div class="item-block">
+            <div class="item-block-header">
+              <span class="item-block-title">{{ exp.role }} @ {{ exp.company }}</span>
+              <button class="remove-btn" onclick="removeBlock(this)">Remove</button>
+            </div>
+            <div class="field-grid">
+              <div class="field-group">
+                <label>Company</label>
+                <input type="text" class="exp-company" value="{{ exp.company }}"/>
+              </div>
+              <div class="field-group">
+                <label>Role / Title</label>
+                <input type="text" class="exp-role" value="{{ exp.role }}"/>
+              </div>
+              <div class="field-group field-group--full">
+                <label>Team / Department</label>
+                <input type="text" class="exp-team" value="{{ exp.team }}"/>
+              </div>
+              <div class="field-group">
+                <label>Location</label>
+                <input type="text" class="exp-location" value="{{ exp.location }}"/>
+              </div>
+              <div class="field-group">
+                <label>Company / Work Link</label>
+                <input type="text" class="exp-link" value="{{ exp.link }}" placeholder="https://company.com"/>
+              </div>
+              <div class="field-group">
+                <label>Start Date</label>
+                <input type="text" class="exp-start" value="{{ exp.start_date }}" placeholder="e.g. Jan 2023"/>
+              </div>
+              <div class="field-group">
+                <label>End Date</label>
+                <input type="text" class="exp-end" value="{{ exp.end_date }}" placeholder="Present"/>
+              </div>
+              <div class="field-group field-group--full">
+                <label>Bullet Points (one per line)</label>
+                <textarea class="exp-points" rows="6">{% for pt in exp.points.all %}{{ pt.text }}
+{% endfor %}</textarea>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <button class="add-btn" onclick="addExperience()">+ Add Experience</button>
+      </div>
+
+      <!-- PROJECTS TAB -->
+      <div class="tab-panel" id="tab-projects">
+        <div id="proj-list">
+          {% for project in projects %}
+          <div class="item-block">
+            <div class="item-block-header">
+              <span class="item-block-title">{{ project.name }}</span>
+              <button class="remove-btn" onclick="removeBlock(this)">Remove</button>
+            </div>
+            <div class="field-grid">
+              <div class="field-group field-group--full">
+                <label>Project Name</label>
+                <input type="text" class="proj-name" value="{{ project.name }}"/>
+              </div>
+              <div class="field-group field-group--full">
+                <label>Tech Stack</label>
+                <input type="text" class="proj-tech" value="{{ project.tech }}" placeholder="e.g. C · Linux · System Calls"/>
+              </div>
+              <div class="field-group field-group--full">
+                <label>Description</label>
+                <textarea class="proj-desc" rows="3">{{ project.description }}</textarea>
+              </div>
+              <div class="field-group">
+                <label>GitHub Link</label>
+                <input type="text" class="proj-github" value="{{ project.github_link }}" placeholder="https://github.com/..."/>
+              </div>
+              <div class="field-group">
+                <label>Live / Demo Link</label>
+                <input type="text" class="proj-link" value="{{ project.link }}" placeholder="https://..."/>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <button class="add-btn" onclick="addProject()">+ Add Project</button>
+      </div>
+
+      <!-- RESEARCH TAB -->
+      <div class="tab-panel" id="tab-research">
+        <div id="res-list">
+          {% for paper in research %}
+          <div class="item-block">
+            <div class="item-block-header">
+              <span class="item-block-title">{{ paper.title|truncatechars:55 }}</span>
+              <button class="remove-btn" onclick="removeBlock(this)">Remove</button>
+            </div>
+            <div class="field-grid">
+              <div class="field-group field-group--full">
+                <label>Paper Title</label>
+                <input type="text" class="res-title" value="{{ paper.title }}"/>
+              </div>
+              <div class="field-group">
+                <label>Publisher / Venue</label>
+                <input type="text" class="res-publisher" value="{{ paper.publisher }}"/>
+              </div>
+              <div class="field-group">
+                <label>Year</label>
+                <input type="text" class="res-year" value="{{ paper.year }}"/>
+              </div>
+              <div class="field-group field-group--full">
+                <label>Description</label>
+                <textarea class="res-desc" rows="3">{{ paper.description }}</textarea>
+              </div>
+              <div class="field-group field-group--full">
+                <label>Link (DOI / paper URL)</label>
+                <input type="text" class="res-link" value="{{ paper.link }}" placeholder="https://doi.org/..."/>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <button class="add-btn" onclick="addResearch()">+ Add Research</button>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="{% static 'js/admin.js' %}"></script>
+</body>
+</html>
