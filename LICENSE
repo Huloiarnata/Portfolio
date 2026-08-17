@@ -1,0 +1,91 @@
+Portfolio License — Split-License Notice
+==========================================
+
+Copyright (c) 2025 Ronit Kumar (github.com/Huloiarnata)
+
+
+1. CODE & DESIGN TEMPLATE — GNU General Public License v3.0
+------------------------------------------------------------
+
+The source code, layout structure, CSS, JavaScript, and generic design
+template of this repository are licensed under the GNU General Public
+License, version 3 (GPLv3). See the full license text at:
+
+    https://www.gnu.org/licenses/gpl-3.0.txt
+
+Under the GPLv3, you are free to use, study, modify, and redistribute
+the code. If you build on it, your derivative work must be released
+under the same GPLv3 license (copyleft) and must preserve the copyright
+notice attributing the original author.
+
+If you use this template to build your own portfolio, please:
+  - keep this LICENSE file (or equivalent GPLv3 notice) intact,
+  - credit "Ronit Kumar — github.com/Huloiarnata/Portfolio" in a
+    visible footer or acknowledgments section,
+  - publish your derivative work's source under GPLv3.
+
+
+2. PERSONAL CONTENT — ALL RIGHTS RESERVED
+------------------------------------------
+
+The following are NOT covered by the GPLv3 above and remain the
+exclusive property of their respective authors:
+
+  (a) All prose written by Ronit Kumar, including but not limited to:
+      the biography, hero copy, "About" text, experience descriptions,
+      publication summaries, and any blog post authored by Ronit Kumar
+      in `posts/` and its subdirectories.
+
+  (b) All personal media, including but not limited to: photographs
+      (e.g. `img/profile.jpg`), personal logos, and identifying data.
+
+  (c) All contributed blog posts and their associated images. Each
+      post authored by a third party remains the copyright of that
+      author, submitted under the terms in CONTRIBUTING.md. Their
+      content is likewise NOT redistributable outside this repository
+      without written permission from the individual author.
+
+  (d) The data files in `data/` insofar as they enumerate personal
+      facts (publications, projects, biographical items). The schema
+      and structure are part of the code (GPLv3); the entries
+      themselves are personal content.
+
+You may NOT copy, redistribute, adapt, translate, or create derivative
+works from the material listed in (a)–(d) above without prior written
+consent. If you fork this template, you must replace all such content
+with your own before publishing.
+
+
+3. TRADEMARKS & IDENTITY
+-------------------------
+
+Nothing in this license grants any right to use the name "Ronit Kumar",
+the "RK" mark, or any identifying imagery of the copyright holder in a
+way that suggests endorsement, sponsorship, or authorship of a
+derivative work.
+
+
+4. NO WARRANTY
+---------------
+
+The code and content are provided "AS IS", without warranty of any
+kind, express or implied. See section 15 of the GPLv3 for details.
+
+
+-------------------------------------------------------------------
+GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
+
+Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+Everyone is permitted to copy and distribute verbatim copies of this
+license document, but changing it is not allowed.
+
+The full text of the GNU General Public License v3 is available at:
+
+    https://www.gnu.org/licenses/gpl-3.0.txt
+
+By using, modifying, or distributing the code portion of this
+repository, you agree to be bound by all terms of the GPLv3 as
+published by the Free Software Foundation, together with the
+additional content restrictions in sections 2–3 above.
+-------------------------------------------------------------------

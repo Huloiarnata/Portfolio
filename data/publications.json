@@ -1,0 +1,32 @@
+[
+  {
+    "venue": "ICRASET 2023",
+    "publisher": "IEEE",
+    "title": "Live Metro Rail Tracking System",
+    "description": "Real-time tracking framework using GPS and 4G GSM with a mobile app utilizing Dijkstra's algorithm for quickest-route identification.",
+    "status": "published",
+    "url": "https://ieeexplore.ieee.org/document/10420247",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "venue": "CoACons 2025",
+    "publisher": "AIP",
+    "title": "FarmSurveil — IoT x AI Precision Farming Tool",
+    "description": "Low-cost IoT & AI precision farming system using ESP32 with multi-sensors collecting 50,000+ real-time data points. LSTM and deep learning models for crop recommendation and yield prediction.",
+    "status": "accepted",
+    "url": "https://pubs.aip.org/aip/acp/coacons2025",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "venue": "CoACons 2025",
+    "publisher": "AIP",
+    "title": "Public Transport Network Optimization",
+    "description": "Digital twin-based framework for optimising urban public transport using TfL BUSTO dataset, DBSCAN clustering, isochrone analysis, and metaheuristic algorithms with SUMO simulation.",
+    "status": "accepted",
+    "url": "https://pubs.aip.org/aip/acp/coacons2025",
+    "featured": true,
+    "order": 3
+  }
+]

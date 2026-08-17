@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Heap Memory Manager",
+    "description": "Custom user-space heap allocator in C with best-fit allocation using linked-list priority queue, block splitting/coalescing, and VM page reclamation. Includes leak detection and memory consistency checks.",
+    "tags": ["C", "Linux", "System Calls"],
+    "status": "active",
+    "url": "https://github.com/Huloiarnata/Heap_Memory_Manager",
+    "visible": true,
+    "featured": true,
+    "order": 1
+  },
+  {
+    "name": "Live Metro Rail Tracking",
+    "description": "Real-time metro tracking using GPS and 4G GSM with Dijkstra's algorithm for optimal route finding. Published in IEEE ICRASET 2023.",
+    "tags": ["IoT", "C", "GPS", "Mobile"],
+    "status": "active",
+    "url": "https://github.com/Huloiarnata/Live-Tracking-of-Metro-Rail-using-Internet-of-Things-",
+    "visible": true,
+    "featured": true,
+    "order": 2
+  },
+  {
+    "name": "FarmSurveil",
+    "description": "IoT & AI precision farming system using ESP32, multi-sensors, LSTM models for crop recommendation and yield prediction. Accepted at CoACons 2025.",
+    "tags": ["Python", "IoT", "ML", "ESP32"],
+    "status": "active",
+    "visible": true,
+    "featured": true,
+    "order": 3
+  },
+  {
+    "name": "NeetCode Submissions",
+    "description": "My solutions to NeetCode.io problems — data structures, algorithms, and competitive programming practice.",
+    "tags": ["C++", "DSA", "Algorithms"],
+    "status": "in-progress",
+    "url": "https://github.com/Huloiarnata/neetcode-submissions",
+    "visible": true,
+    "featured": false,
+    "order": 4
+  },
+  {
+    "name": "Exploring Go",
+    "description": "Learning repository for Go systems programming — exploring concurrency, networking, and low-level constructs.",
+    "tags": ["Go", "Systems"],
+    "status": "in-progress",
+    "url": "https://github.com/Huloiarnata/ExploringGo",
+    "visible": true,
+    "featured": false,
+    "order": 5
+  }
+]

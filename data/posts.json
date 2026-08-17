@@ -1,0 +1,102 @@
+[
+  {
+    "slug": "perf-distributed-systems",
+    "title": "Performance in Distributed Systems — Where Latency Hides",
+    "date": "2026-08-18",
+    "excerpt": "Understanding tail latency, cache partitioning, and QoS isolation in distributed storage clusters. Where the p99 diverges from the p50 and what to do about it.",
+    "tags": ["systems", "performance", "distributed"],
+    "authors": [
+      { "name": "Ronit Kumar", "url": "https://github.com/Huloiarnata" }
+    ],
+    "featured": true,
+    "order": 1,
+    "visible": true
+  },
+  {
+    "slug": "hello-world",
+    "title": "Hello World — Building This Site",
+    "date": "2026-08-17",
+    "excerpt": "A quick post on why I built this portfolio, the design choices behind it, and how the blog system works.",
+    "tags": ["meta", "web"],
+    "authors": [
+      { "name": "Ronit Kumar", "url": "https://github.com/Huloiarnata" }
+    ],
+    "featured": true,
+    "order": 2,
+    "visible": true
+  },
+  {
+    "slug": "drones/build-log-1",
+    "title": "Drone Build Log — Part 1: Frame, Motors, First Bench Test",
+    "date": "2026-08-10",
+    "excerpt": "Choosing a 5-inch racing frame, matching motors to a 4S battery, and the very first time all four motors spun in the same direction.",
+    "tags": ["hardware", "drones", "build-log"],
+    "authors": [
+      { "name": "Ronit Kumar", "url": "https://github.com/Huloiarnata" },
+      { "name": "Ananya Rao", "url": "https://github.com/ananya-r" }
+    ],
+    "series": "Drones",
+    "seriesOrder": 1,
+    "featured": true,
+    "order": 3,
+    "visible": true
+  },
+  {
+    "slug": "drones/build-log-2",
+    "title": "Drone Build Log — Part 2: Wiring, ESCs, Flight Controller",
+    "date": "2026-08-12",
+    "excerpt": "Soldering the four ESC signal lines, connecting the flight controller, and the first Betaflight configurator session.",
+    "tags": ["hardware", "drones", "build-log", "electronics"],
+    "authors": [
+      { "name": "Ronit Kumar", "url": "https://github.com/Huloiarnata" },
+      { "name": "Ananya Rao", "url": "https://github.com/ananya-r" }
+    ],
+    "series": "Drones",
+    "seriesOrder": 2,
+    "featured": false,
+    "order": 4,
+    "visible": true
+  },
+  {
+    "slug": "drones/build-log-3",
+    "title": "Drone Build Log — Part 3: PID Tuning, First Flight, Regrets",
+    "date": "2026-08-14",
+    "excerpt": "What went right, what went wrong, and why you should probably not do your maiden flight in a park with kids.",
+    "tags": ["hardware", "drones", "build-log", "control-systems"],
+    "authors": [
+      { "name": "Ronit Kumar", "url": "https://github.com/Huloiarnata" },
+      { "name": "Ananya Rao", "url": "https://github.com/ananya-r" }
+    ],
+    "series": "Drones",
+    "seriesOrder": 3,
+    "featured": false,
+    "order": 5,
+    "visible": true
+  },
+  {
+    "slug": "kernel-panic-friday",
+    "title": "The Friday I Learned to Read a Kernel Panic",
+    "date": "2026-07-30",
+    "excerpt": "A stack trace, a hunch, and eight hours of chasing a NULL deref through the FreeBSD virtual memory subsystem.",
+    "tags": ["kernel", "debugging", "freebsd"],
+    "authors": [
+      { "name": "Ronit Kumar", "url": "https://github.com/Huloiarnata" }
+    ],
+    "featured": false,
+    "order": 6,
+    "visible": true
+  },
+  {
+    "slug": "guest-post-example",
+    "title": "Why I Still Reach for C in 2026",
+    "date": "2026-07-15",
+    "excerpt": "A guest take: the case for C when the abstraction budget is zero and every byte matters. Not because it's fashionable — because it fits.",
+    "tags": ["languages", "systems", "opinion"],
+    "authors": [
+      { "name": "Meera Iyer", "url": "https://github.com/meera-i" }
+    ],
+    "featured": false,
+    "order": 7,
+    "visible": true
+  }
+]

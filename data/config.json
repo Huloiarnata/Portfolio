@@ -1,0 +1,21 @@
+{
+  "name": "Ronit Kumar",
+  "title": "Software Engineer — PowerScale, Dell Technologies",
+  "location": "Bengaluru, India",
+  "email": "ronit.kumar710.nr@gmail.com",
+  "links": {
+    "linkedin": "https://linkedin.com/in/RonitKumar",
+    "github": "https://github.com/Huloiarnata",
+    "scholar": "https://scholar.google.com/citations?user=RonitKumar",
+    "leetcode": "https://leetcode.com/RonitKumar"
+  },
+  "hiddenRepos": ["Portfolio"],
+  "repoStatus": {
+    "Heap_Memory_Manager": "active",
+    "neetcode-submissions": "in-progress",
+    "ExploringGo": "in-progress",
+    "Quantum_Practical": "archived",
+    "Data_Structure_Algorithms": "archived"
+  },
+  "blogRepo": "blog-content"
+}

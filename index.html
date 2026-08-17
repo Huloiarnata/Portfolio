@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ronit Kumar</title>
+  <meta name="description" content="Ronit Kumar — building close to the metal. PowerScale at Dell Technologies. Systems, storage, and kernel-level work.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' fill='none' stroke='%2348d597' stroke-linecap='round' stroke-linejoin='round'><path d='M4 20 L18 6 L32 20' stroke-width='2.5'/><circle cx='18' cy='20' r='4.5' stroke-width='1.5'/><circle cx='18' cy='20' r='1.5' fill='%2348d597'/><path d='M10 25 L18 32 L26 25' stroke-width='0.8' opacity='0.3'/></svg>">
+  <script>(function(){var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" title="RK">
+        <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 20 L18 6 L32 20" stroke-width="2.2"/>
+          <circle cx="18" cy="20" r="4.5" stroke-width="1.4"/>
+          <circle cx="18" cy="20" r="1.5" fill="currentColor" stroke="none"/>
+          <path d="M10 25 L18 32 L26 25" stroke-width="0.8" opacity="0.25"/>
+        </svg>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="mailto:ronit.kumar710.nr@gmail.com" class="nav-contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="meteors"></div>
+    <div class="satellite" aria-hidden="true">
+      <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- left solar panel -->
+        <rect x="2" y="12" width="14" height="8" fill="currentColor" fill-opacity="0.15"/>
+        <line x1="6" y1="12" x2="6" y2="20"/>
+        <line x1="10" y1="12" x2="10" y2="20"/>
+        <!-- body -->
+        <rect x="18" y="10" width="12" height="12" rx="1.5" fill="currentColor" fill-opacity="0.45"/>
+        <!-- right solar panel -->
+        <rect x="32" y="12" width="14" height="8" fill="currentColor" fill-opacity="0.15"/>
+        <line x1="36" y1="12" x2="36" y2="20"/>
+        <line x1="40" y1="12" x2="40" y2="20"/>
+        <!-- antenna -->
+        <line x1="24" y1="10" x2="24" y2="4"/>
+        <circle cx="24" cy="3" r="1.2" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="satellite-2" aria-hidden="true">
+      <svg viewBox="0 0 32 20" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="1" y="8" width="9" height="5" fill="currentColor" fill-opacity="0.13"/>
+        <line x1="3.5" y1="8" x2="3.5" y2="13"/>
+        <line x1="6.5" y1="8" x2="6.5" y2="13"/>
+        <rect x="11" y="6" width="10" height="8" rx="1.2" fill="currentColor" fill-opacity="0.4"/>
+        <rect x="22" y="8" width="9" height="5" fill="currentColor" fill-opacity="0.13"/>
+        <line x1="24.5" y1="8" x2="24.5" y2="13"/>
+        <line x1="27.5" y1="8" x2="27.5" y2="13"/>
+        <line x1="16" y1="6" x2="16" y2="2"/>
+        <circle cx="16" cy="1.5" r="0.9" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="space-moon" aria-hidden="true">
+      <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="14" r="11" fill="#b8c8d0" opacity="0.65"/>
+        <circle cx="18" cy="11" r="9" fill="#08111a"/>
+        <circle cx="8" cy="20" r="1.8" fill="none" stroke="#8fa0a8" stroke-width="0.6" opacity="0.4"/>
+        <circle cx="13" cy="24" r="1.1" fill="none" stroke="#8fa0a8" stroke-width="0.5" opacity="0.3"/>
+      </svg>
+    </div>
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-layout">
+        <div class="hero-content">
+          <div class="hero-tagline">Chose engineering for the freedom to build</div>
+          <h1 class="hero-name">Ronit Kumar</h1>
+          <p class="hero-title">PowerScale &middot; Dell Technologies</p>
+          <p class="hero-bio">
+            I build scalable, efficient system-level solutions at Dell ISG. I enjoy
+            solving complex problems at scale with clarity and intent that supports
+            real-world performance and reliability. Drawn to teams working on
+            foundational problems in infrastructure and distributed systems.
+          </p>
+          <div class="hero-facts">
+            <span class="hero-fact">C</span>
+            <span class="hero-fact">C++</span>
+            <span class="hero-fact">Python</span>
+            <span class="hero-fact">Go</span>
+            <span class="hero-fact">FreeBSD</span>
+            <span class="hero-fact">Linux</span>
+            <span class="hero-fact">GDB</span>
+            <span class="hero-fact">DTrace</span>
+            <span class="hero-fact">NFS</span>
+            <span class="hero-fact">QoS</span>
+            <span class="hero-fact">Kernel</span>
+            <span class="hero-fact">Cache Systems</span>
+          </div>
+          <div class="hero-links">
+            <a href="https://linkedin.com/in/RonitKumar" target="_blank" rel="noopener" class="hero-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/Huloiarnata" target="_blank" rel="noopener" class="hero-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+            <a href="https://scholar.google.com/citations?user=RonitKumar" target="_blank" rel="noopener" class="hero-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Scholar
+            </a>
+            <a href="https://leetcode.com/RonitKumar" target="_blank" rel="noopener" class="hero-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+              LeetCode
+            </a>
+          </div>
+          <div class="hero-status">
+            <span class="status-dot"></span>
+            Bengaluru, India &bull; PowerScale &bull; Dell Technologies
+          </div>
+        </div>
+
+        <div class="hero-aside">
+          <div class="hero-photo">
+            <img src="img/site/profile.jpg" alt="Ronit Kumar" loading="eager">
+          </div>
+          <div class="hero-edu">
+            <div class="hero-edu-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/><path d="M22 10v6"/></svg>
+            </div>
+            <div class="hero-edu-info">
+              <div class="hero-edu-degree">B.Tech, Computer Science &amp; Engineering</div>
+              <div class="hero-edu-school">SRM University &bull; 2025</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-label reveal">Experience</div>
+      <h2 class="section-title reveal">Where I've Built Things</h2>
+      <div class="timeline">
+        <div class="timeline-item current reveal">
+          <div class="timeline-header">
+            <span class="timeline-company">Dell Technologies</span>
+            <span class="timeline-separator">|</span>
+            <span class="timeline-role">PowerScale: Software Engineer 1</span>
+          </div>
+          <div class="timeline-meta">Sept 2025 — Present &bull; Bengaluru, India</div>
+          <ul class="timeline-points">
+            <li>Delivered granular <strong>Quality of Service</strong> in PowerScale by architecting a kernel-level, protocol-agnostic Operation Class framework that isolated performance by operation type, preventing spikes in one workload type from starving critical operations — contributing to the retention of a <strong>$500M strategic account</strong>.</li>
+            <li>Engineered end-to-end productization of the <strong>Slow-OPs monitoring daemon</strong> by implementing threshold-based detection that auto-triggered telemetry collection during node and protocol slowdowns, closing a critical root-cause diagnostics gap.</li>
+          </ul>
+          <div class="timeline-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            VP Team Recognition Award &bull; QoS SME — India
+          </div>
+          <div class="timeline-links">
+            <a href="https://github.com/Huloiarnata/Heap_Memory_Manager" target="_blank" rel="noopener" class="timeline-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Memory Manager
+            </a>
+            <a href="https://infohub.delltechnologies.com/en-us/p/powerscale-onefs-9-14/" target="_blank" rel="noopener" class="timeline-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              OneFS 9.14
+            </a>
+            <a href="https://infohub.delltechnologies.com/en-us/p/powerscale-onefs-9-15-release/" target="_blank" rel="noopener" class="timeline-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              OneFS 9.15
+            </a>
+          </div>
+        </div>
+        <div class="timeline-item past reveal">
+          <div class="timeline-header">
+            <span class="timeline-company">Dell Technologies</span>
+            <span class="timeline-separator">|</span>
+            <span class="timeline-role">PowerScale: Undergraduate Intern</span>
+          </div>
+          <div class="timeline-meta">Sept 2024 — Aug 2025 &bull; Bengaluru, India</div>
+          <ul class="timeline-points">
+            <li>Boosted cache hit ratio by <strong>240%</strong> by architecting a custom cache-partitioning scheme with an optimized eviction policy, significantly reducing redundant disk I/O and improving cluster read performance.</li>
+            <li>Engineered a high-performance multithreaded utility for cluster-wide quota analysis by implementing optimized <strong>B-Tree traversal</strong>, enabling efficient processing of massive unstructured storage metadata at scale.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESEARCH & PAPERS ===== -->
+  <section id="research">
+    <div class="container">
+      <div class="section-label reveal">Research &amp; Publications</div>
+      <h2 class="section-title reveal">Published Work</h2>
+      <div class="pub-grid reveal" id="pubGrid"></div>
+      <div class="view-all-link reveal">
+        <a href="publications.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          View all publications
+        </a>
+      </div>
+
+      <div class="sub-section reveal">
+        <h3 class="sub-section-title">Papers I Recommend</h3>
+        <div class="papers-list" id="papersList"></div>
+        <div class="view-all-link">
+          <a href="papers.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            View all recommendations
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS & CODE ===== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-label reveal">Projects &amp; Code</div>
+      <h2 class="section-title reveal">Selected Work</h2>
+      <div class="project-grid reveal" id="projectGrid"></div>
+      <div class="view-all-link reveal">
+        <a href="projects.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          View all projects
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOG PREVIEW ===== -->
+  <section id="blog">
+    <div class="container">
+      <div class="section-label reveal">Blog</div>
+      <h2 class="section-title reveal">Latest Writing</h2>
+      <div class="blog-grid" id="blogPreview">
+        <div class="blog-empty"><p>// loading posts...</p></div>
+      </div>
+      <div class="view-all-link reveal">
+        <a href="blog.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          View all posts
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">&copy; 2026 Ronit Kumar &bull; Code: GPLv3 &bull; Content: All Rights Reserved</div>
+      <ul class="footer-links">
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="https://github.com/Huloiarnata/Portfolio" target="_blank" rel="noopener">Source</a></li>
+        <li><a href="https://github.com/Huloiarnata" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:ronit.kumar710.nr@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

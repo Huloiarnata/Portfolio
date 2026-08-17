@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [blog-update]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout portfolio
+        uses: actions/checkout@v4
+
+      - name: Fetch blog content from private repo
+        env:
+          BLOG_REPO_TOKEN: ${{ secrets.BLOG_REPO_TOKEN }}
+        run: |
+          if [ -n "$BLOG_REPO_TOKEN" ]; then
+            echo "Fetching blog content..."
+            git clone --depth 1 https://x-access-token:${BLOG_REPO_TOKEN}@github.com/${{ github.repository_owner }}/blog-content.git /tmp/blog-content || true
+
+            if [ -d "/tmp/blog-content/posts" ]; then
+              # Copy visible markdown posts
+              cp /tmp/blog-content/posts/*.md posts/ 2>/dev/null || true
+
+              # Use the blog repo's posts.json if it exists
+              if [ -f "/tmp/blog-content/posts.json" ]; then
+                cp /tmp/blog-content/posts.json data/posts.json
+              fi
+            fi
+          else
+            echo "No BLOG_REPO_TOKEN set — using local posts only"
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

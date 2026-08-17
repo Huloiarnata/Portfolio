@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post — Ronit Kumar</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' fill='none' stroke='%2348d597' stroke-linecap='round' stroke-linejoin='round'><path d='M4 20 L18 6 L32 20' stroke-width='2.5'/><circle cx='18' cy='20' r='4.5' stroke-width='1.5'/><circle cx='18' cy='20' r='1.5' fill='%2348d597'/><path d='M10 25 L18 32 L26 25' stroke-width='0.8' opacity='0.3'/></svg>">
+  <script>(function(){var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" title="RK">
+        <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 20 L18 6 L32 20" stroke-width="2.2"/>
+          <circle cx="18" cy="20" r="4.5" stroke-width="1.4"/>
+          <circle cx="18" cy="20" r="1.5" fill="currentColor" stroke="none"/>
+          <path d="M10 25 L18 32 L26 25" stroke-width="0.8" opacity="0.25"/>
+        </svg>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="mailto:ronit.kumar710.nr@gmail.com" class="nav-contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="post-header" id="postHeader">
+      <a href="blog.html" class="post-back">&larr; Back to blog</a>
+      <div id="postSeriesSlot"></div>
+      <h1 class="post-title" id="postTitle">Loading...</h1>
+      <div class="post-meta" id="postMeta"></div>
+      <div id="postAuthorsSlot"></div>
+    </div>
+    <article class="prose" id="postContent">
+      <p style="color: var(--text-tertiary);">Loading post...</p>
+    </article>
+
+    <nav class="post-nav" id="postNav" style="display:none;">
+      <a class="post-nav-link prev" id="postPrev">
+        <span class="post-nav-label">&larr; Previous</span>
+        <span class="post-nav-title"></span>
+      </a>
+      <a class="post-nav-link next" id="postNext">
+        <span class="post-nav-label">Next &rarr;</span>
+        <span class="post-nav-title"></span>
+      </a>
+    </nav>
+
+  </div>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">&copy; 2026 Ronit Kumar &bull; Code: GPLv3 &bull; Content: All Rights Reserved</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="https://github.com/Huloiarnata/Portfolio" target="_blank" rel="noopener">Source</a></li>
+        <li><a href="mailto:ronit.kumar710.nr@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+    document.getElementById('themeToggle')?.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    document.getElementById('navToggle')?.addEventListener('click', () =>
+      document.getElementById('navLinks')?.classList.toggle('open'));
+
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav')?.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    function parseMd(md) {
+      // Extract SVG blocks before any regex processing — blank lines inside SVGs
+      // confuse the paragraph regex and cause inner SVG content to be wrapped in <p>.
+      const svgBlocks = [];
+      let h = md.replace(/<svg[\s\S]*?<\/svg>/g, match => {
+        svgBlocks.push(match);
+        return '\x00SVG' + (svgBlocks.length - 1) + '\x00';
+      });
+      h = h.replace(/```(\w*)\n([\s\S]*?)```/g, (_, l, c) => '<pre><code class="language-' + l + '">' + escH(c.trim()) + '</code></pre>');
+      h = h.replace(/`([^`]+)`/g, '<code>$1</code>');
+      h = h.replace(/^#### (.+)$/gm, '<h4>$1</h4>');
+      h = h.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+      h = h.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+      h = h.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+      h = h.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+      h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      h = h.replace(/\*(.+?)\*/g, '<em>$1</em>');
+      h = h.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy">');
+      h = h.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+      h = h.replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>');
+      h = h.replace(/^---$/gm, '<hr>');
+      h = h.replace(/^[\-\*] (.+)$/gm, '<li>$1</li>');
+      h = h.replace(/((?:<li>.*<\/li>\n?)+)/g, '<ul>$1</ul>');
+      h = h.replace(/\n\n([^<][\s\S]*?)(?=\n\n|$)/g, (_, p) => {
+        const t = p.trim();
+        return t ? ((/^<[a-z]/.test(t)) ? '\n\n' + t : '\n\n<p>' + t + '</p>') : '';
+      });
+      h = h.replace(/\x00SVG(\d+)\x00/g, (_, i) => svgBlocks[parseInt(i)]);
+      return h;
+    }
+
+    function escH(t) { return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    function esc(t) { const d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+    function fmtDate(d) { return d ? new Date(d).toLocaleDateString('en-US',{day:'numeric',month:'short',year:'numeric'}).toUpperCase() : ''; }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const slug = new URLSearchParams(window.location.search).get('slug');
+      if (!slug) {
+        document.getElementById('postTitle').textContent = 'Post not found';
+        document.getElementById('postContent').innerHTML = '<p>No post specified. <a href="blog.html">Back to blog</a></p>';
+        return;
+      }
+
+      try {
+        const metaRes = await fetch('data/posts.json?' + Date.now());
+        const posts = await metaRes.json();
+        const visiblePosts = posts.filter(p => p.visible !== false);
+        const post = visiblePosts.find(p => p.slug === slug);
+        if (!post) throw new Error('Not found');
+
+        document.title = post.title + ' — Ronit Kumar';
+        document.getElementById('postTitle').textContent = post.title;
+
+        const metaParts = [fmtDate(post.date)];
+        if (post.tags) metaParts.push(post.tags.join(' · '));
+        document.getElementById('postMeta').textContent = metaParts.join(' • ');
+
+        // Series pill (if part of a series)
+        if (post.series) {
+          const seriesSlot = document.getElementById('postSeriesSlot');
+          seriesSlot.innerHTML = '<span class="post-series">Series · ' + esc(post.series) + '</span>';
+        }
+
+        // Authors below meta
+        if (post.authors && post.authors.length) {
+          const authorsEl = document.createElement('div');
+          authorsEl.className = 'post-authors';
+          authorsEl.innerHTML = post.authors.map(a => {
+            const name = typeof a === 'string' ? a : a.name;
+            const url = typeof a === 'object' && a.url ? a.url : null;
+            const icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
+            return url
+              ? '<a href="' + url + '" target="_blank" rel="noopener" class="post-author">' + icon + esc(name) + '</a>'
+              : '<span class="post-author">' + icon + esc(name) + '</span>';
+          }).join('');
+          document.getElementById('postAuthorsSlot').appendChild(authorsEl);
+        }
+
+        // Fetch markdown — slug may include series folder (e.g. "drones/build-log-1")
+        const mdRes = await fetch('posts/' + slug + '.md');
+        if (!mdRes.ok) throw new Error('Content not found');
+        const md = await mdRes.text();
+        const content = md.replace(/^---[\s\S]*?---\n*/, '');
+        document.getElementById('postContent').innerHTML = parseMd(content);
+
+        // Prev/next navigation. Within a series, walk series posts by seriesOrder.
+        // Otherwise walk all visible posts by list order in posts.json.
+        renderPostNav(visiblePosts, post);
+      } catch {
+        document.getElementById('postTitle').textContent = 'Post not found';
+        document.getElementById('postContent').innerHTML = '<p>This post could not be loaded. <a href="blog.html">Back to blog</a></p>';
+      }
+    });
+
+    function renderPostNav(posts, current) {
+      let siblings;
+      if (current.series) {
+        siblings = posts
+          .filter(p => p.series === current.series)
+          .sort((a, b) => (a.seriesOrder || 0) - (b.seriesOrder || 0));
+      } else {
+        siblings = posts.filter(p => !p.series);
+      }
+      const idx = siblings.findIndex(p => p.slug === current.slug);
+      if (idx === -1) return;
+
+      const prev = idx > 0 ? siblings[idx - 1] : null;
+      const next = idx < siblings.length - 1 ? siblings[idx + 1] : null;
+      if (!prev && !next) return;
+
+      const nav = document.getElementById('postNav');
+      const prevEl = document.getElementById('postPrev');
+      const nextEl = document.getElementById('postNext');
+
+      if (prev) {
+        prevEl.href = 'post.html?slug=' + encodeURIComponent(prev.slug);
+        prevEl.querySelector('.post-nav-title').textContent = prev.title;
+      } else {
+        prevEl.classList.add('post-nav-empty');
+        prevEl.removeAttribute('href');
+        prevEl.querySelector('.post-nav-title').textContent = '';
+      }
+
+      if (next) {
+        nextEl.href = 'post.html?slug=' + encodeURIComponent(next.slug);
+        nextEl.querySelector('.post-nav-title').textContent = next.title;
+      } else {
+        nextEl.classList.add('post-nav-empty');
+        nextEl.removeAttribute('href');
+        nextEl.querySelector('.post-nav-title').textContent = '';
+      }
+      nav.style.display = 'grid';
+    }
+  </script>
+</body>
+</html>

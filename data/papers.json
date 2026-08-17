@@ -1,0 +1,47 @@
+[
+  {
+    "title": "The Tail at Scale",
+    "authors": "Dean & Barroso — Communications of ACM 2013",
+    "category": "systems",
+    "url": "https://research.google/pubs/pub40801/",
+    "featured": true,
+    "order": 1,
+    "visible": true
+  },
+  {
+    "title": "The Google File System",
+    "authors": "Ghemawat, Gobioff, Leung — SOSP 2003",
+    "category": "distributed",
+    "url": "https://research.google/pubs/pub51/",
+    "featured": true,
+    "order": 2,
+    "visible": true
+  },
+  {
+    "title": "Dynamo: Amazon's Highly Available Key-value Store",
+    "authors": "DeCandia et al. — SOSP 2007",
+    "category": "distributed",
+    "url": "https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf",
+    "featured": true,
+    "order": 3,
+    "visible": true
+  },
+  {
+    "title": "The Design and Implementation of a Log-Structured File System",
+    "authors": "Rosenblum & Ousterhout, 1992",
+    "category": "storage",
+    "url": "https://people.eecs.berkeley.edu/~brewer/cs262/LFS.pdf",
+    "featured": false,
+    "order": 4,
+    "visible": true
+  },
+  {
+    "title": "An Introduction to the FreeBSD Operating System",
+    "authors": "McKusick & Neville-Neil",
+    "category": "os",
+    "url": "",
+    "featured": false,
+    "order": 5,
+    "visible": true
+  }
+]
